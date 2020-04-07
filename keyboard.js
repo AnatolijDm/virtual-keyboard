@@ -2,7 +2,7 @@ let lang = 'en';
 let capsLock = 'off';
 let win = 'off';
 let text;
-const textArea = document.querySelector('textarea');
+let addTextArea = document.querySelector('#text');
 
 document.querySelector('#keys').addEventListener('click', (e) => {
     if (capsLock === 'off') {
@@ -65,10 +65,10 @@ document.querySelector('#keys').addEventListener('click', (e) => {
         text = '    ';
     }
     if (e.target.innerHTML === 'Backspace') {
-        let textAr =  textArea.innerHTML;
+        let textAr =  addTextArea.innerHTML;
         let res = textAr.toString().split('');
         res.splice(res.length - 1, 1)
-        textArea.innerHTML = res.join('');
+        addTextArea.innerHTML = res.join('');
         text = '';
     }
     if (e.target.innerHTML === 'Shift') {
@@ -81,10 +81,10 @@ document.querySelector('#keys').addEventListener('click', (e) => {
         text = '';
     }
     if (e.target.innerHTML === 'Del') {
-        let textAre =  textArea.innerHTML;
+        let textAre =  addTextArea.innerHTML;
         let ress = textAre.toString().split('');
-        ress.splice(0, 1)
-        textArea.innerHTML = ress.join('');
+        ress.splice(0, 1);
+        addTextArea.innerHTML = ress.join('');
         text = '';
     }
     if (e.target.innerHTML === 'Space' || e.target.innerHTML === 'Пробел') {
@@ -105,5 +105,5 @@ document.querySelector('#keys').addEventListener('click', (e) => {
     if (e.target.innerHTML === 'down') {
         text = '';
     }
-    textArea.innerHTML = textArea.innerHTML + text;
+    addTextArea.innerHTML = addTextArea.innerHTML + text;
 })
