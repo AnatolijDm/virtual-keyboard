@@ -4,6 +4,10 @@ textArea.rows = '8';
 textArea.cols = '60';
 document.body.appendChild(textArea);
 
+window.addEventListener('languagechange', function() {
+    console.log('languagechange event detected!'); 
+  });
+
 let keyboard = document.createElement('div');
 keyboard.id = 'keys';
 document.body.appendChild(keyboard);

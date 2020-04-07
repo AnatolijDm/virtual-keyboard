@@ -72,13 +72,6 @@ document.querySelector('#keys').addEventListener('click', (e) => {
             textArea.innerHTML = res.join('');
             text = '';
         }
-        if (e.target.innerHTML === 'Backspace') {
-            let textAr =  textArea.innerHTML;
-            let res = textAr.toString().split('');
-            res.splice(res.length - 1, 1)
-            textArea.innerHTML = res.join('');
-            text = '';
-        }
         if (e.target.innerHTML === 'Shift') {
             text = '';
         }
@@ -86,6 +79,13 @@ document.querySelector('#keys').addEventListener('click', (e) => {
             text = '';
         }
         if (e.target.innerHTML === 'Ctrl') {
+            text = '';
+        }
+        if (e.target.innerHTML === 'Del') {
+            let textAre =  textArea.innerHTML;
+            let ress = textAre.toString().split('');
+            ress.splice(0, 1)
+            textArea.innerHTML = ress.join('');
             text = '';
         }
         if (e.target.innerHTML === 'Space' || e.target.innerHTML === 'Пробел') {
