@@ -48,10 +48,6 @@ textarea {
     width: 90px;
 }
 
-.key-up {
-   background-image: url(./assets/images/images.png);
-}
-
 .key-ctr {
     width: 70px;
 }
@@ -59,18 +55,6 @@ textarea {
 .key-space {
     width: 370px;
 }
-
-.key-left {
-    background-image: url(./assets/images/left.png);
- }
-
- .key-down {
-    background-image: url(./assets/images/down.png);
- }
-
- .key-right {
-    background-image: url(./assets/images/right.png);
- }
 
  .number-keys:hover {
      background-color: rgb(152, 153, 228);

@@ -104,6 +104,7 @@ function numberKeyCreate(arr = arrayRu) {
     let keyUp = document.createElement('button');
     keyUp.className = 'number-keys key-up';
     keyboard.appendChild(keyUp);
+    keyUp.innerHTML = 'up';
 
     keyShift = document.createElement('button');
     keyShift.className = 'number-keys';
@@ -143,14 +144,17 @@ function numberKeyCreate(arr = arrayRu) {
     let keyLeft = document.createElement('button');
     keyLeft.className = 'number-keys key-left';
     keyboard.appendChild(keyLeft);
+    keyLeft.innerHTML = 'left';
 
     let keyDown = document.createElement('button');
     keyDown.className = 'number-keys key-down';
     keyboard.appendChild(keyDown);
+    keyDown.innerHTML = 'down';
 
     let keyRight = document.createElement('button');
     keyRight.className = 'number-keys key-right';
     keyboard.appendChild(keyRight);
+    keyRight.innerHTML = 'right';
 
 }
 
