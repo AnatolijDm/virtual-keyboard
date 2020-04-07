@@ -1,25 +1,39 @@
 let textArea = document.createElement('textarea');
 textArea.id = 'text';
-textArea.rows = '15';
-textArea.cols = '130';
+textArea.rows = '8';
+textArea.cols = '60';
 document.body.appendChild(textArea);
 
 let keyboard = document.createElement('div');
 keyboard.id = 'keys';
 document.body.appendChild(keyboard);
 
-function numberKeyCreate() {
-    for (let i = 48; i < 58; i++) {
-        let keyNumber = document.createElement('button');
-        keyNumber.className = 'number-keys';
-        keyboard.appendChild(keyNumber);
-        keyNumber.innerHTML = String.fromCharCode(i);
-    }
+let arrayEn = ['81', '87', '69', '82', '84', '89', '85', '73', '79', '80', '123', '125', '65', '83', '68', '70', '71', '72', '74', '75', '76', '58', '34', '47', '90', '88', '67', '86', '66', '78', '77', '60', '62', '63', 'Space', '48'];
+let arrayRu = ['1049', '1062', '1059', '1050', '1045', '1053', '1043', '1064', '1065', '1047', '1061', '1066', '1060', '1067', '1042', '1040', '1055', '1056', '1054', '1051', '1044', '1046', '1069', '47', '1071', '1063', '1057', '1052', '1048', '1058', '1068', '1041', '1070', '63', 'Пробел', '1025'];
 
-    keyNumber = document.createElement('button');
-    keyNumber.className = 'number-keys';
-    keyboard.appendChild(keyNumber);
-    keyNumber.innerHTML = String.fromCharCode(45);
+function numberKeyCreate(arr = arrayRu, num) {
+
+    if (num === 1) {
+        for (let i = 48; i < 58; i++) {
+            let keyNumber = document.createElement('button');
+            keyNumber.className = 'number-keys';
+            keyboard.appendChild(keyNumber);
+            keyNumber.innerHTML = String.fromCharCode(i);
+        }
+        createChar(45);
+    } else if (num === 2) {
+        createChar(arr[35]);
+        createChar(33);
+        createChar(34);
+        createChar(35);
+        createChar(59);
+        createChar(37);
+        createChar(94);
+        createChar(38);
+        createChar(42);
+        createChar(40);
+        createChar(41);
+    }
 
     keyNumber = document.createElement('button');
     keyNumber.className = 'number-keys';
@@ -43,18 +57,19 @@ function numberKeyCreate() {
         keyChar.innerHTML = String.fromCharCode(num);
     }
 
-    createChar('81');
-    createChar('87');
-    createChar('69');
-    createChar('82');
-    createChar('84');
-    createChar('89');
-    createChar('85');
-    createChar('73');
-    createChar('79');
-    createChar('80');
-    createChar('123');
-    createChar('125');
+    
+    createChar(arr[0]);
+    createChar(arr[1]);
+    createChar(arr[2]);
+    createChar(arr[3]);
+    createChar(arr[4]);
+    createChar(arr[5]);
+    createChar(arr[6]);
+    createChar(arr[7]);
+    createChar(arr[8]);
+    createChar(arr[9]);
+    createChar(arr[10]);
+    createChar(arr[11]);
 
     let keyDel = document.createElement('button');
     keyDel.className = 'number-keys key-del';
@@ -66,17 +81,17 @@ function numberKeyCreate() {
     keyboard.appendChild(keyCaps);
     keyCaps.innerHTML = 'Caps Lock';
 
-    createChar('65');
-    createChar('83');
-    createChar('68');
-    createChar('70');
-    createChar('71');
-    createChar('72');
-    createChar('74');
-    createChar('75');
-    createChar('76');
-    createChar('58');
-    createChar('34');
+    createChar(arr[12]);
+    createChar(arr[13]);
+    createChar(arr[14]);
+    createChar(arr[15]);
+    createChar(arr[16]);
+    createChar(arr[17]);
+    createChar(arr[18]);
+    createChar(arr[19]);
+    createChar(arr[20]);
+    createChar(arr[21]);
+    createChar(arr[22]);
 
     let keyEnter = document.createElement('button');
     keyEnter.className = 'number-keys key-enter';
@@ -88,17 +103,18 @@ function numberKeyCreate() {
     keyboard.appendChild(keyShift);
     keyShift.innerHTML = 'Shift';
 
-    createChar('47');
-    createChar('90');
-    createChar('88');
-    createChar('67');
-    createChar('86');
-    createChar('66');
-    createChar('78');
-    createChar('77');
-    createChar('60');
-    createChar('62');
-    createChar('63');
+    
+    createChar(arr[23]);
+    createChar(arr[24]);
+    createChar(arr[25]);
+    createChar(arr[26]);
+    createChar(arr[27]);
+    createChar(arr[28]);
+    createChar(arr[29]);
+    createChar(arr[30]);
+    createChar(arr[31]);
+    createChar(arr[32]);
+    createChar(arr[33]);
 
     let keyUp = document.createElement('button');
     keyUp.className = 'number-keys key-up';
@@ -127,7 +143,7 @@ function numberKeyCreate() {
     let keySpace = document.createElement('button');
     keySpace.className = 'number-keys key-space';
     keyboard.appendChild(keySpace);
-    keySpace.innerHTML = 'Space';
+    keySpace.innerHTML = arr[34];
 
     keyAlt = document.createElement('button');
     keyAlt.className = 'number-keys';
@@ -153,4 +169,4 @@ function numberKeyCreate() {
 
 }
 
-numberKeyCreate();
+numberKeyCreate(arrayRu, 1);
