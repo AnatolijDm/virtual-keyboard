@@ -4,10 +4,6 @@ textArea.rows = '8';
 textArea.cols = '60';
 document.body.appendChild(textArea);
 
-window.addEventListener('languagechange', function() {
-    console.log('languagechange event detected!'); 
-  });
-
 let keyboard = document.createElement('div');
 keyboard.id = 'keys';
 document.body.appendChild(keyboard);
@@ -15,9 +11,7 @@ document.body.appendChild(keyboard);
 let arrayEn = ['81', '87', '69', '82', '84', '89', '85', '73', '79', '80', '123', '125', '65', '83', '68', '70', '71', '72', '74', '75', '76', '58', '34', '47', '90', '88', '67', '86', '66', '78', '77', '60', '62', '63', 'Space', '48'];
 let arrayRu = ['1049', '1062', '1059', '1050', '1045', '1053', '1043', '1064', '1065', '1047', '1061', '1066', '1060', '1067', '1042', '1040', '1055', '1056', '1054', '1051', '1044', '1046', '1069', '47', '1071', '1063', '1057', '1052', '1048', '1058', '1068', '1041', '1070', '63', 'Пробел', '1025'];
 
-function numberKeyCreate(arr = arrayRu, num) {
-
-    if (num === 1) {
+function numberKeyCreate(arr = arrayRu) {
         for (let i = 48; i < 58; i++) {
             let keyNumber = document.createElement('button');
             keyNumber.className = 'number-keys';
@@ -25,19 +19,6 @@ function numberKeyCreate(arr = arrayRu, num) {
             keyNumber.innerHTML = String.fromCharCode(i);
         }
         createChar(45);
-    } else if (num === 2) {
-        createChar(arr[35]);
-        createChar(33);
-        createChar(34);
-        createChar(35);
-        createChar(59);
-        createChar(37);
-        createChar(94);
-        createChar(38);
-        createChar(42);
-        createChar(40);
-        createChar(41);
-    }
 
     keyNumber = document.createElement('button');
     keyNumber.className = 'number-keys';
@@ -173,4 +154,4 @@ function numberKeyCreate(arr = arrayRu, num) {
 
 }
 
-numberKeyCreate(arrayRu, 1);
+numberKeyCreate(arrayRu);
