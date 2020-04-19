@@ -3,6 +3,7 @@ let capsLock = 'off';
 let win = 'off';
 let text;
 let addTextArea = document.querySelector('#text');
+const someKeysArray = ['Shift', 'Alt', 'Ctrl', 'up', 'left', 'right', 'down'];
 
 document.querySelector('#keys').addEventListener('click', (e) => {
     if (capsLock === 'off') {
@@ -14,18 +15,18 @@ document.querySelector('#keys').addEventListener('click', (e) => {
     e.target.style.animation = 'pressKey 2s';
     e.target.style.animation = 'pressKeyBack 2s';
 
-    if (e.target.innerHTML === 'Caps Lock' && capsLock == 'off') {
+    if (e.target.innerHTML === 'Caps Lock' && capsLock === 'off') {
         e.target.style.animation = 'pressKey 2s';
         e.target.style.background = 'rgb(152, 153, 228)';
         text = '';
         capsLock = 'on';
-    } else if (e.target.innerHTML === 'Caps Lock' && capsLock == 'on') {
+    } else if (e.target.innerHTML === 'Caps Lock' && capsLock === 'on') {
         e.target.style.animation = 'pressKeyBack 2s';
         e.target.style.background = 'white';
         text = '';
         capsLock = 'off';
     }
-    if (e.target.innerHTML === 'Win' && win == 'off') {
+    if (e.target.innerHTML === 'Win' && win === 'off') {
         e.target.style.animation = 'pressKey 2s';
         e.target.style.background = 'rgb(152, 153, 228)';
         text = '';
@@ -42,7 +43,7 @@ document.querySelector('#keys').addEventListener('click', (e) => {
         document.querySelector('.number-keys:nth-child(11)').innerHTML = String.fromCharCode(40);
         document.querySelector('.number-keys:nth-child(12)').innerHTML = String.fromCharCode(41);
         win = 'on';
-    } else if (e.target.innerHTML === 'Win' && win == 'on') {
+    } else if (e.target.innerHTML === 'Win' && win === 'on') {
         e.target.style.animation = 'pressKeyBack 2s';
         e.target.style.background = 'white';
         text = '';
@@ -61,9 +62,6 @@ document.querySelector('#keys').addEventListener('click', (e) => {
         win = 'off';
     }
 
-    if (e.target.innerHTML === 'Tab') {
-        text = '    ';
-    }
     if (e.target.innerHTML === 'Backspace') {
         let textAr =  addTextArea.innerHTML;
         let res = textAr.toString().split('');
@@ -71,14 +69,13 @@ document.querySelector('#keys').addEventListener('click', (e) => {
         addTextArea.innerHTML = res.join('');
         text = '';
     }
-    if (e.target.innerHTML === 'Shift') {
-        text = '';
+    if (e.target.innerHTML === 'Tab') {
+        text = '    ';
     }
-    if (e.target.innerHTML === 'Alt') {
-        text = '';
-    }
-    if (e.target.innerHTML === 'Ctrl') {
-        text = '';
+    for(let i = 0; i < 8; i++) {
+        if (e.target.innerHTML === someKeysArray[i]) {
+            text = '';
+        }
     }
     if (e.target.innerHTML === 'Del') {
         let textAre =  addTextArea.innerHTML;
@@ -92,18 +89,6 @@ document.querySelector('#keys').addEventListener('click', (e) => {
     }
     if (e.target.innerHTML === 'Enter') {
         text = '\n';
-    }
-    if (e.target.innerHTML === 'up') {
-        text = '';
-    }
-    if (e.target.innerHTML === 'left') {
-        text = '';
-    }
-    if (e.target.innerHTML === 'right') {
-        text = '';
-    }
-    if (e.target.innerHTML === 'down') {
-        text = '';
     }
     addTextArea.innerHTML = addTextArea.innerHTML + text;
 })
