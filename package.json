@@ -1,0 +1,23 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "There are two languages (russian, english) in task, change them by pressing 'Shift' + 'Alt'.\r The web address of virtual keyboard task solution: https://anatolijdm.github.io/virtual-keyboard/",
+  "main": "keyboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnatolijDm/virtual-keyboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnatolijDm/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/AnatolijDm/virtual-keyboard#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0"
+  }
+}

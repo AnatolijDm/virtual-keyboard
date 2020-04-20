@@ -1,0 +1,71 @@
+textarea {
+    font-size: 30px;
+}
+
+#keys {
+    width: 880px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(1, 6, 20);
+}
+
+.number-keys {
+    margin: 5px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.key-backspace {
+    width: 150px;
+}
+
+.key-tab {
+    width: 80px;
+}
+
+.key-del {
+    width: 60px;
+}
+
+.key-caps {
+    width: 100px;
+}
+
+.key-enter {
+    width: 100px;
+}
+
+.key-shift {
+    width: 90px;
+}
+
+.key-ctr {
+    width: 70px;
+}
+
+.key-space {
+    width: 370px;
+}
+
+ .number-keys:hover {
+     background-color: rgb(152, 153, 228);
+ }
+
+ @keyframes pressKey {
+    from {background: white;}
+    to {background: rgb(152, 153, 228);}
+ }
+
+ @keyframes pressKeyBack {
+    from {background: rgb(152, 153, 228);}
+    to {background: white;}
+ }
